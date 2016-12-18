@@ -12,19 +12,8 @@ java_library(
 )
 
 java_test(
-	name = "HelloBazelTest",
-	deps = [
-		":HelloBazelApi",
-		"@commons_lang3//jar",
-		"@junit//jar",
-		"@hamcrest_all//jar",
-	],
-	srcs = glob(["src/test/java/**/*.java",]),
-	test_class = "willard379.bazel.sample.HelloBazelTest",
-)
-
-java_test(
 	name = "AllTests",
+	size = "small",
 	deps = [
 		":HelloBazelApi",
 		"@commons_lang3//jar",
