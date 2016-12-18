@@ -22,3 +22,22 @@ java_test(
 	srcs = glob(["src/test/java/**/*.java",]),
 	test_class = "willard379.bazel.sample.HelloBazelTest",
 )
+
+java_test(
+	name = "AllTests",
+	deps = [
+		":HelloBazelApi",
+		"@commons_lang3//jar",
+		"@junit//jar",
+		"@hamcrest_all//jar",
+		":takari_cpsuite",
+	],
+	srcs = glob(["src/test/java/**/*.java",]),
+)
+
+java_import(
+	name = "takari_cpsuite",
+	jars = [
+		"lib/takari-cpsuite-1.2.7.jar",
+	],
+)
